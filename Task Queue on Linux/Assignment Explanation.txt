@@ -1,0 +1,38 @@
+Ceng313 HW2 - Explanation
+
+Ismail Ulaş Bayram - 220201040
+
+- First of all, we need to compile the code. After that, we need to give parameter argument. If number of parameter is less than 2 or greater than 2, then program gives warning that is "Please, enter the number".
+
+- When parameter is given, Task_queue() method is called with parameter. In Task_queue() method, Task_enqueue() method is called and it creates tasks up to parameter count and adds the tasks to queue with parameters created randomly one by one.
+
+- After enqueue operation, every tasks are dequeued one by one inside the for loop. By looking the task type of task, we choose which operation is applied (insert:0, delete:1, search:2) and then by taking the value of task, we apply one of the three operations.
+
+- Insert Method
+
+When inserting the value to the list, first we check whether data exists in the list or not. If it does not exist in the list, then we can insert value to it. First of all, we create temporary node and equal the value of task to data of node. And we set the next node of list to NULL.
+
+If our list is empty, we set temporary node to the list.
+
+If the next node of our list is empty, then we set temporary node to the next node of list.
+
+Otherwise, If the list has more than 2 nodes, then we search inside the list by creating copy of the list and we add temprary node to the last node of list.
+
+- Delete Method
+
+When deleting the value to the list, first we check whether data exists in the list or not, If it exists, we create temporary list and previous list that are the same with our list.
+
+If temporary data is not null and the data of first node of the temporary list is equal to the value of task, then we set the next node of list to list. If the next node of the list is NULL, then our list is NULL.
+
+If the data of the temp list is not equal to the value of the task, then we search the data inside the list, when finding the data inside the temp list, then we bind previous node with next node of the temp list.
+
+- Search Method
+
+We create temporary list that is equal to our list. And we search the data inside the list. If the data is found, then method returns true. Otherwise, the method returns false.
+
+- After all operations are done, we use SortedList() method and we create three linked lists which are temporary, traverse and min. We set temporary list to our list. If the next node of temporary list is not NULL, then min is equal to the first node of our list and traverse is equal to the next node of our list. If traverse node is not null, then we compare the data of min with the data of traverse. If the data of min is greater than data of traverse, then min equal to the traverse. This operation is the same with INSERTION SORT. I implement insertion sort algorithm with linked list logic.
+
+Finally, we print Final list.
+
+P.S. : task_type is generated randomly between the range of 0 and 2.
+And value is generated randomly between the range of 0 and 5.
